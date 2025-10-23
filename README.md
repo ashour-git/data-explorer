@@ -236,3 +236,5 @@ This framework follows enterprise software development practices:
 - Professional documentation
 - Test coverage
 - Configuration management
+#   d a t a - e x p l o r e r  
+ 
