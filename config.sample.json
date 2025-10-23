@@ -1,0 +1,63 @@
+{
+  "environments": {
+    "staging": {
+      "host": "staging-dbpostgresql.postgres.database.azure.com",
+      "port": 5432,
+      "database": "postgres",
+      "username": "levelup",
+      "password": "Pass12345",
+      "connection_args": {
+        "sslmode": "require",
+        "connect_timeout": 30,
+        "application_name": "data_archaeologist_staging"
+      },
+      "description": "Staging environment for development and testing"
+    },
+    "production": {
+      "host": "levelup-postgres-db.postgres.database.azure.com",
+      "port": 5432,
+      "database": "postgres",
+      "username": "ahelalley",
+      "password": "Post1234",
+      "connection_args": {
+        "sslmode": "require",
+        "connect_timeout": 30,
+        "application_name": "data_archaeologist_production"
+      },
+      "description": "Production environment for live analysis"
+    },
+    "backup": {
+      "host": "levelup-backup.postgres.database.azure.com",
+      "port": 5432,
+      "database": "postgres",
+      "username": "levelup",
+      "password": "Pass12345",
+      "connection_args": {
+        "sslmode": "require",
+        "connect_timeout": 30,
+        "application_name": "data_archaeologist_backup"
+      },
+      "description": "Backup environment for data recovery and analysis"
+    }
+  },
+  "analysis_settings": {
+    "enable_parallel_execution": true,
+    "max_workers": 4,
+    "connection_pool_size": 10,
+    "query_timeout": 300,
+    "large_table_threshold": 1000000,
+    "sample_size_for_analysis": 10000
+  },
+  "logging": {
+    "level": "INFO",
+    "log_directory": "logs",
+    "max_log_size_mb": 100,
+    "backup_count": 5
+  },
+  "output": {
+    "default_format": "json",
+    "export_directory": "reports",
+    "include_metadata": true,
+    "compress_reports": false
+  }
+}
